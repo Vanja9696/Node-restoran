@@ -1,0 +1,29 @@
+ <!-- form handling -->
+ <form action="/api/products" method="POST" id="add_product">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class="text-dark">Naziv</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="jelo1">
+        </div>
+        <div class="form-group">
+            <label for="Email" class="text-dark">Cena</label>
+            <input type="text" name="price" value="" placeholder="1234">
+        <div class="form-group">
+            <label for="gender" class="text-dark">Status</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="availability" value="Available" >
+                <label for="radio-4" class="radio-label">Available</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="availability" value="Unavailable" >
+                <label for="radio-5" class="radio-label">Unavailable</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>

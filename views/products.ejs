@@ -1,0 +1,57 @@
+
+<!--include navbar-->
+<%- include('include/_navbar') %>
+<!--/include navbar-->
+
+
+<!-- include header -->
+    <%- include('include/_header') %>
+<!-- /include header -->
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between"></div>
+                <a href="/add-product" class="border-shadow">
+                    <span class="text-gradient">New Product<i class="bi bi-plus-square"></i></span>
+                </a>
+                </div>
+
+            <!-- form handling -->
+            <form action="/products" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Availability</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i < products.length; i++) { %>
+                            <tr>
+                                <td><%= i + 1 %></td>
+                                <td><%= products[i].name %></td>
+                                <td><%= products[i].price %></td>
+                                <td><%= products[i].availabillity %></td>
+                                <td>
+                                    <a href="/update-product?id=<%= products[i]._id%>" class="btn border-shadow update">
+                                        <span class="text-gradient"><i class="fa fa-shopping-basket" aria-hidden="true"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+<!-- /Main Site -->
+
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
